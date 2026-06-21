@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -42,8 +44,8 @@ android {
         create("release") {
             val propsFile = rootProject.file("signing.properties")
             if (propsFile.exists()) {
-                val props = java.util.Properties()
-                props.load(propsFile.inputStream())
+                val props = Properties()
+                propsFile.inputStream().use { props.load(it) }
                 storeFile = file(props.getProperty("STORE_FILE"))
                 storePassword = props.getProperty("STORE_PASSWORD")
                 keyAlias = props.getProperty("KEY_ALIAS")
@@ -78,7 +80,7 @@ android {
 
     sourceSets {
         getByName("main") {
-            jniLibs.srcDirs("libs")
+            jniLibs.setSrcDirs(listOf("libs"))
         }
     }
 
