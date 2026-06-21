@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/category_rsta_spoof_settings">
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/title_rsta_spoof_explain" />
+
+        <EditTextPreference
+            android:key="pref_rsta_spoof_connect_ip"
+            android:summary="@string/summary_rsta_spoof_connect_ip"
+            android:title="@string/title_rsta_spoof_connect_ip" />
+
+        <EditTextPreference
+            android:inputType="number"
+            android:key="pref_rsta_spoof_connect_port"
+            android:summary="@string/summary_rsta_spoof_connect_port"
+            android:title="@string/title_rsta_spoof_connect_port" />
+
+        <EditTextPreference
+            android:key="pref_rsta_spoof_fake_sni"
+            android:summary="@string/summary_rsta_spoof_fake_sni"
+            android:title="@string/title_rsta_spoof_fake_sni" />
+
+        <ListPreference
+            android:defaultValue="combined"
+            android:entries="@array/rsta_spoof_methods"
+            android:entryValues="@array/rsta_spoof_methods"
+            android:key="pref_rsta_spoof_method"
+            android:summary="%s"
+            android:title="@string/title_rsta_spoof_method" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/category_rsta_spoof_status">
+
+        <Preference
+            android:key="pref_rsta_spoof_status"
+            android:selectable="false"
+            android:title="@string/title_rsta_spoof_status" />
+
+        <Preference
+            android:key="pref_rsta_spoof_view_log"
+            android:summary="@string/summary_rsta_spoof_view_log"
+            android:title="@string/title_rsta_spoof_view_log" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
