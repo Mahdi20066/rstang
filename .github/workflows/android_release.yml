@@ -19,7 +19,7 @@ jobs:
 
       - name: Decode Keystore
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release-key.jks
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -di > app/release-key.jks
 
       - name: Create signing.properties
         run: |
